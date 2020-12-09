@@ -15,7 +15,11 @@ def scrape_website_events(category):
 	url = 'https://dare2compete.com/e/'+category+'?&filters=engineering students&types=eligible'
 
 	# initiating the webdriver. Parameter includes the path of the webdriver. 
-	driver = webdriver.Chrome('/usr/bin/chromedriver')  
+	op = webdriver.ChromeOptions()
+	op.add_argument('headless')
+	driver = webdriver.Chrome(options=op)
+
+	#driver = webdriver.Chrome('/usr/bin/chromedriver')  
 	driver.get(url)  
   
 	# this is just to ensure that the page is loaded 
