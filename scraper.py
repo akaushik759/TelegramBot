@@ -63,8 +63,9 @@ def scrape_website_articles(category):
 	url = 'https://dare2compete.com/e/'+category
 
 	# initiating the webdriver. Parameter includes the path of the webdriver. 
-	driver = webdriver.Chrome('/usr/bin/chromedriver')  
-	driver.get(url)  
+	op = webdriver.ChromeOptions()
+	op.add_argument('headless')
+	driver = webdriver.Chrome(options=op)
   
 	# this is just to ensure that the page is loaded 
 	time.sleep(3)  
